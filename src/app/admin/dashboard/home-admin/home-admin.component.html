@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <div class="row">
+        <table class="table table-hover" style="background-color: white;">
+            <thead>
+                <tr>
+                  <th scope="col">Nome NFT</th>
+                  <th scope="col">Creatore</th>
+                  <th scope="col">Azione</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let i of Element">
+                  <th scope="row">{{i.name}}</th>
+                  <td>{{i.username}}</td>
+                  <td><button mat-raised-button color="accent" [routerLink]="['../../../../function/core/admin/dashboard/readnft/' + i.guid]">Apri</button></td>
+                </tr>
+              </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+{
+    "menu": {
+        "nav": {
+            "home": "Home",
+            "about": "About Us",
+            "categories": "Categories"
+        },
+        "account": {
+            "text-for-access": "In order to continue, you must log in or register",
+            "profile": "Profile",
+            "collect": "Collect",
+            "exit": "Logout"
+        }
+        
+    },
+    
+    "notify_text": {
+        "error_text": {
+            "something_went_wrong": "Somethings went wrong. Try later.",
+            "form": {
+                "signup_login": {
+                    "error-email-not-exist": "The email entered does not exist",
+                    "error-email-not-valid": "The email entered is invalid",
+                    "error-email-alredy-exist": "The email entered has already been used",
+                    "error-username-not-exist": "The username entered does not exist",
+                    "error-username-not-valid": "The username entered is invalid",
+                    "error-username-alredy-exist": "The username entered has already been used",
+                    "error-account-not-activated": "The account has not yet been activated. Open the email in order to activate the account"        
+                }
+            }
+        },
+
+        "info_text": {
+            "loading": "Loading..."
+        }
+
+        
+    },
+
+    "app_object": {
+        "nft_card": {
+            "status": {
+                "mint_done": "Mint carried out",
+                "pending": "Pending"
+            },
+            "properties": "Properties",
+            "ingredients": {
+                "name": "Ingredients",
+                "quantity": "Quantity",
+                "actions": "Actions"
+            },
+            "type": {
+                "gold": "Gold",
+                "silver": "Silver",
+                "bronze": "Bronze",
+                "common": "Common"
+            }
+        },
+    
+        "table": {
+            "no-data": "No data"
+        }
+
+    },
+
+    
+
+    "language": {
+        "label": "Choose language",
+        "italian": "Italian",
+        "english": "English"
+    },
+
+    "form": {
+        "general_input": {
+            "username": "Username",
+            "name": "Name",
+            "lastname": "Lastname",
+            "telephone": "Telephone",
+            "repeat_password": "Repeat Password",
+            "description": "Description"
+        },
+
+        "wallet_input": {
+            "public_key": "Public Key",
+            "private_key": "Private Key",
+            "keystore": "Keystore"
+        }
+
+    },
+
+    "app_pages": {
+        "home": {
+            "title": "Hi works!"
+        },
+    
+        "login": {
+            "text-button-login": "Login",
+            "text-for-signup-redirect": "If you don't have an account,",
+            "link_text-for-signup-redirect": "signup here",
+            "text-button-signup": "Signup",
+            "text-for-login-redirect": "If you already have an account,",
+            "link_text-for-login-redirect": "login here"
+        },
+    
+        "profile": {
+            "personal_data": "Dati personali",
+            "personal_data_text": "Modifica i tuoi dati personali",
+            "security_data": "Sicurezza",
+            "security_data_text": "Gestisci la sicurezza del tuo account",
+            "privacy_data_text": "Modifica i consensi della privacy"
+        },
+    
+        "prescription": {
+            "new_prescription": "Nuova ricetta"
+        }
+    }
+
+    
+}

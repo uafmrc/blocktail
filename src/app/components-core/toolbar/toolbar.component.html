@@ -1,0 +1,36 @@
+<app-progress-spinner class="example-margin" [displayProgressSpinner]="this.displayprogressspinner"></app-progress-spinner>
+<mat-drawer-container class="container-blocktail" [hasBackdrop]="true" autosize>
+  <mat-drawer #drawer class="sidenav-blocktail" mode="side">
+    <button mat-stroked-button class="example-icon language-icon" style="margin-bottom: 10px;" [routerLink]="['']"><mat-icon>home</mat-icon> {{ 'menu.home' | translate }}</button>
+    <button mat-stroked-button class="example-icon group-icon" style="margin-bottom: 10px;"><mat-icon>group</mat-icon>  {{ 'menu.about' | translate }}</button>
+    <button mat-stroked-button class="example-icon language-icon" style="margin-bottom: 10px;"> {{ 'menu.categories' | translate }}</button>
+  </mat-drawer>
+
+  <div class="sidenav-content-blocktail">
+    <mat-toolbar class="toolbar-fixed" *ngIf="this.router.url != '/404'">
+      <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span [routerLink]="['']" style="cursor:pointer;">BlockTailChain</span>
+      <span class="spacer-toolbar"></span>
+      <button mat-icon-button [matMenuTriggerFor]="menu_account" class="example-icon person-icon" aria-label="Choose Language">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="menu_language" *ngIf="loading == false" class="example-icon language-icon" aria-label="Choose Language">
+        <mat-icon>language</mat-icon>
+      </button>
+      <mat-menu #menu_language="matMenu">
+        <button mat-menu-item (click)="selectLanguage('it-it')">🇮🇹 {{ 'language.italian' | translate }}</button>
+        <button mat-menu-item (click)="selectLanguage('en-en')">🇬🇧 {{ 'language.english' | translate }}</button>
+      </mat-menu>
+      <mat-menu #menu_account="matMenu">
+        <app-account-menu [login]="this.login"></app-account-menu>
+      </mat-menu>
+    </mat-toolbar>
+    <div class="py-5">
+      <router-outlet (activate)="onActivate()"></router-outlet>
+    </div>
+    <app-footer *ngIf="this.cookieVal != this.obj && router.url != '/404'"></app-footer>
+  </div>
+
+</mat-drawer-container>

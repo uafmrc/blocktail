@@ -1,0 +1,39 @@
+<app-progress-spinner [displayProgressSpinner]="this.loading"></app-progress-spinner>
+<div class="text-center mt-5">
+    <main class="form-signin">
+        <div class="row">
+            <h2>{{ 'app_pages.login.text-button-signup' | translate }}</h2>
+            <p>{{ 'app_pages.login.text-for-login-redirect' | translate }} <a [routerLink]="['../login']">{{ 'app_pages.login.link_text-for-login-redirect' | translate }}</a></p>
+        </div>
+        <form [formGroup]="formRegister" class="example-form row" style="margin-top: 6px;">
+            <p style="color: red;" *ngIf="this.messageError != null">{{ this.messageError[0] | translate}}, {{ this.messageError[1] | translate}}</p>
+            <mat-form-field class="example-full-width" appearance="fill" (change)="this.checkUsername()">
+                <mat-label>{{ "form.general_input.username" | translate }}</mat-label>
+                <input matInput type="text" inputmode="latin-name" formControlName="username" maxlength="12" minlength="3" required />
+                <mat-error>{{ this.getErrorUsername() | translate }}</mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill" (change)="this.checkEmail()">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" inputmode="email" formControlName="email" />
+                <mat-error *ngIf="formRegister.controls['email'].invalid"></mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>Password</mat-label>
+                <input matInput type="password" formControlName="password" />
+                <mat-error *ngIf="formRegister.controls['password'].invalid"></mat-error>
+            </mat-form-field>
+            <mat-form-field class="example-full-width" appearance="fill">
+                <mat-label>{{ "form.general_input.repeat_password" | translate }}</mat-label>
+                <input matInput type="password" formControlName="passwordtwo" required />
+                <mat-error *ngIf="formRegister.controls['passwordtwo'].invalid"></mat-error>   
+            </mat-form-field>
+            <section class="example-section text-start">
+                <mat-checkbox class="example-margin">Indeterminate</mat-checkbox>
+            </section>
+            <section class="example-section-f text-start mb-4">
+                <mat-checkbox class="example-margin">Checked</mat-checkbox>
+            </section>
+            <button mat-raised-button type="submit" class="example-full-width-button" color="primary" [class.spinner-loading-button]="this.loading == true" [disabled]="!formRegister.valid || this.loading == true" (click)="clickRegister()">{{ 'login.text-button-signup' | translate }}</button>
+        </form>
+    </main>
+</div>

@@ -1,18 +1,28 @@
-<h1 mat-dialog-title><strong>{{action}}</strong></h1>
-<div mat-dialog-content>
-  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate" appearance="fill">
-    <mat-label>Key</mat-label>
-    <input matInput [(ngModel)]="local_data.name">
+<h1 mat-dialog-title class="text-center"><strong>{{ actionTitle | translate }}</strong></h1>
+<div mat-dialog-content class="text-center">
+  <mat-form-field *ngIf="action != 'delete'" appearance="fill">
+    <mat-label>{{ 'app_object.nft_card.ingredients.name' | translate }}</mat-label>
+    <input matInput [(ngModel)]="local_data.name" required>
   </mat-form-field>
-  <mat-form-field *ngIf="action != 'Delete'; else elseTemplate" appearance="fill">
-    <mat-label>Value</mat-label>
-    <input matInput [(ngModel)]="local_data.values">
+  <mat-form-field *ngIf="action != 'delete'" appearance="fill">
+    <mat-label>{{ 'app_object.nft_card.ingredients.quantity' | translate }}</mat-label>
+    <mat-select required [(ngModel)]="selectedItem" (selectionChange)="changeAdd()" required="">
+      <mat-option>--</mat-option>
+      <mat-option [value]="'app_object.nft_card.ingredients.item.a-few-drops' | translate ">{{ 'app_object.nft_card.ingredients.item.a-few-drops' | translate }}</mat-option>
+      <mat-option [value]="'app_object.nft_card.ingredients.item.just-enough' | translate">{{ 'app_object.nft_card.ingredients.item.just-enough' | translate }}</mat-option>
+      <mat-option [value]="'number'">{{ 'app_object.nft_card.ingredients.item.specific-quantity' | translate }}</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field *ngIf="action != 'delete'; else elseTemplate" [hidden]="this.specificQuantity" appearance="fill" style="width: 201px;">
+    <mat-label>{{ 'app_object.nft_card.ingredients.quantity' | translate }}</mat-label>
+    <input matInput type="text" inputmode="numeric" maxlength="2" (keypress)="numberOnly($event)" [(ngModel)]="local_data.values" required />
+    <span matSuffix>ml</span>
   </mat-form-field>
   <ng-template #elseTemplate>
-    Sure to delete <b>{{local_data.name}}</b>?
+    <span>{{ 'app_object.nft_card.ingredients.delete-text' | translate }}</span>
   </ng-template>
 </div>
 <div mat-dialog-actions>
-  <button mat-button (click)="doAction()">{{action}}</button>
-  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">Cancel</button>
+  <button mat-button (click)="doAction()">{{ 'general_text.' + actionButton | translate }}</button>
+  <button mat-button (click)="closeDialog()" mat-flat-button color="warn">{{ 'general_text.cancel' | translate }}</button>
 </div>

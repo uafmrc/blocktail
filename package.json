@@ -1,6 +1,6 @@
 {
   "name": "blocktailchain",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -29,6 +29,7 @@
     "ngx-dropzone": "^3.1.0",
     "ngx-skeleton-loader": "^4.0.0",
     "rxjs": "~7.4.0",
+    "sentiment": "^5.0.2",
     "sweetalert2": "^11.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

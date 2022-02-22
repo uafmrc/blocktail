@@ -4,24 +4,24 @@
 </button>
 <button mat-menu-item *ngIf="this.login == true && this.cookieVal != this.obj" [routerLink]="['profile']">
     <mat-icon>person</mat-icon>
-    <span>{{ 'menu.account.profile' | translate }}</span>
+    <span>{{ 'menu.subnav.profile.profile' | translate }}</span>
 </button>
 <button mat-menu-item *ngIf="this.login == true && this.cookieVal != this.obj" [routerLink]="['collect']">
     <mat-icon>collections</mat-icon>
-    <span>{{ 'menu.account.collect' | translate }}</span>
+    <span>{{ 'menu.subnav.profile.collect' | translate }}</span>
 </button>
 <mat-divider *ngIf="this.login == true"></mat-divider>
 <button mat-menu-item color="danger" (click)="clickLogout()"  *ngIf="this.login == true">
     <mat-icon>do_disturb</mat-icon>
-    <span>{{ 'menu.account.exit' | translate }}</span>
+    <span>{{ 'menu.subnav.profile.exit' | translate }}</span>
 </button>
 
 <div class="container py-5" *ngIf="this.login == false">
     <div class="row text-center mb-4">
-      <h2 class="text-center">{{ 'menu.account.text-for-access' | translate }}</h2>
+      <h2 class="text-center">{{ 'menu.subnav.profile.text-for-access' | translate }}</h2>
     </div>
     <mat-divider></mat-divider>
     <div class="row text-center p-3">
-        <button mat-flat-button color="accent" [routerLink]="['login']">{{ 'menu.account.profile' | translate }}</button>
+        <button mat-flat-button color="accent" [routerLink]="['login']">{{ 'menu.subnav.profile.profile' | translate }}</button>
     </div>
 </div>

@@ -1,9 +1,9 @@
 <app-progress-spinner class="example-margin" [displayProgressSpinner]="this.displayprogressspinner"></app-progress-spinner>
 <mat-drawer-container class="container-blocktail" [hasBackdrop]="true" autosize>
   <mat-drawer #drawer class="sidenav-blocktail" mode="side">
-    <button mat-stroked-button class="example-icon language-icon" style="margin-bottom: 10px;" [routerLink]="['']"><mat-icon>home</mat-icon> {{ 'menu.home' | translate }}</button>
-    <button mat-stroked-button class="example-icon group-icon" style="margin-bottom: 10px;"><mat-icon>group</mat-icon>  {{ 'menu.about' | translate }}</button>
-    <button mat-stroked-button class="example-icon language-icon" style="margin-bottom: 10px;"> {{ 'menu.categories' | translate }}</button>
+    <button mat-stroked-button class="example-icon language-icon" style="margin-bottom: 10px;" [routerLink]="['']"><mat-icon>home</mat-icon> {{ 'menu.nav.home' | translate }}</button>
+    <button mat-stroked-button class="example-icon group-icon" style="margin-bottom: 10px;"><mat-icon>group</mat-icon>  {{ 'menu.nav.about' | translate }}</button>
+    <button mat-stroked-button class="example-icon language-icon" style="margin-bottom: 10px;"> {{ 'menu.nav.categories' | translate }}</button>
   </mat-drawer>
 
   <div class="sidenav-content-blocktail">
@@ -20,8 +20,8 @@
         <mat-icon>language</mat-icon>
       </button>
       <mat-menu #menu_language="matMenu">
-        <button mat-menu-item (click)="selectLanguage('it-it')">🇮🇹 {{ 'language.italian' | translate }}</button>
-        <button mat-menu-item (click)="selectLanguage('en-en')">🇬🇧 {{ 'language.english' | translate }}</button>
+        <button mat-menu-item (click)="selectLanguage('it-it')">🇮🇹 {{ "language.italian" | translate }}</button>
+        <button mat-menu-item (click)="selectLanguage('en-en')">🇬🇧 {{ "language.english" | translate }}</button>
       </mat-menu>
       <mat-menu #menu_account="matMenu">
         <app-account-menu [login]="this.login"></app-account-menu>

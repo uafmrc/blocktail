@@ -1,19 +1,19 @@
 <div class="container">
   <div class="row">
       <div class="px-4 py-5 my-5 text-center">
-          <mat-icon class="display-icon mb-5">{{ 'collect.title' | translate }}</mat-icon>
-          <h1 class="display-5 fw-bold">{{ 'toolbar.account.collect' | translate}}</h1>
+          <mat-icon class="display-icon mb-5">collect</mat-icon>
+          <h1 class="display-5 fw-bold">{{ 'app_pages.collect.title' | translate}}</h1>
           <div class="col-lg-6 mx-auto">
-              <p class="lead mb-4">{{ 'collect.description' | translate }}</p>
+              <p class="lead mb-4">{{ 'app_pages.collect.description' | translate }}</p>
           </div>
       </div>
   </div>
   <div class="container row collect-row">
-    <mat-card class="example-card" [ngClass]="{'example-card-selected': '1'}">
+    <mat-card class="example-card" [ngClass]="{'example-card-selected': '1'}" style="cursor: pointer;">
       <mat-card-header></mat-card-header>
       <img mat-card-image [routerLink]="['../buildnft/new']" src="../../../assets/image/card/gold_card.png" >
       <mat-card-content style="cursor: pointer;" [routerLink]="['../buildnft/new']">
-          <mat-card-title style="text-align: center;">{{ 'collect.new_prescription' | translate }}</mat-card-title>
+          <mat-card-title style="text-align: center;">{{ 'app_pages.collect.new-prescription' | translate }}</mat-card-title>
       </mat-card-content>
     </mat-card>
     <mat-card class="example-card" *ngFor="let i of dataSource" [ngClass]="{'example-card-selected': '1'}" #card1>
@@ -24,10 +24,12 @@
             </button>
             <mat-menu #menu="matMenu">
               <button mat-menu-item [routerLink]="['../buildnft/' + i.guid]">
-                <span>Aggiorna</span>
+                <mat-icon>update</mat-icon>
+                <span>{{ 'general_text.update' | translate }}</span>
               </button>
               <button mat-menu-item (click)="this.DeleteData(i.guid)">
-                <span>Elimina</span>
+                <mat-icon>delete_forever</mat-icon>
+                <span>{{ 'general_text.delete' | translate }}</span>
               </button>
             </mat-menu>
           </div>
@@ -38,8 +40,8 @@
             <mat-card-title>{{i.name}}</mat-card-title>
             <mat-card-subtitle>{{i.description}}</mat-card-subtitle>
             <mat-card-subtitle>
-              <span class="badge rounded-pill bg-success text-dark" *ngIf="i.status == '1'">Mint effettuato</span>
-              <span class="badge rounded-pill bg-warning text-dark" *ngIf="i.status == '0'">In revisione</span>
+              <span class="badge rounded-pill bg-success text-dark" *ngIf="i.status == '1'">{{ 'app_object.nft_card.status.mint-done' | translate }}</span>
+              <span class="badge rounded-pill bg-warning text-dark" *ngIf="i.status == '0'">{{ 'app_object.nft_card.status.pending' | translate }}</span>
             </mat-card-subtitle>
         </mat-card-content>
     </mat-card>

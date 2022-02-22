@@ -34,6 +34,7 @@ export class CreatenftComponent implements OnInit {
   loading:boolean = false;
   res:string;
   guidNft:string;
+  elementTranslate:Boolean = false;
   displayedColumns: string[] = ['name', 'values', 'action'];
   dataSource = ELEMENT_DATA;
 
@@ -42,6 +43,8 @@ export class CreatenftComponent implements OnInit {
   class3:boolean = false;
   class4:boolean = false;
   class5:boolean = false;
+
+  
 
   constructor(private http:HttpClient, public dialog:MatDialog, public cookie:CookieService, public fb:FormBuilder, public url:HttpUrlService, public _auth:AuthService) {
     this._auth.checkLogin();
@@ -88,6 +91,19 @@ export class CreatenftComponent implements OnInit {
     }
   }
 
+  checkNameSentiment() {
+    var Sentiment = require('sentiment');
+    var sentiment = new Sentiment();
+    var result = sentiment.analyze(this.formNft.controls['name'].value, {language: 'en'});
+    console.log(result); 
+  }
+
+  checkDescriptionSentiment() {
+    var Sentiment = require('sentiment');
+    var sentiment = new Sentiment();
+    var result = sentiment.analyze(this.formNft.controls['description'].value);
+    console.log(result); 
+  }
   
 
   showProgressSpinner = () => {
@@ -139,11 +155,13 @@ export class CreatenftComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result.event == 'Add'){
+      if(result.event == 'add'){
         this.addRowData(result.data);
-      }else if(result.event == 'Update'){
+      }else if(result.event == 'addnoml') {
+        this.addRowDataWithoutML(result.data);
+      }else if(result.event == 'update'){
         this.updateRowData(result.data);
-      }else if(result.event == 'Delete'){
+      }else if(result.event == 'delete'){
         this.deleteRowData(result.data);
       }
       this.table.renderRows();
@@ -166,10 +184,20 @@ export class CreatenftComponent implements OnInit {
     this.dataSource.push({
       id:d.getTime(),
       name:row_obj.name,
-      values:row_obj.values
+      values:row_obj.values + ' ml'
     });
     this.table.renderRows();
     
+  }
+
+  async addRowDataWithoutML(row_obj:any){
+    var d = new Date();
+    this.dataSource.push({
+      id:d.getTime(),
+      name:row_obj.name,
+      values:row_obj.values
+    });
+    this.table.renderRows();
   }
 
   async updateRowData(row_obj:any){

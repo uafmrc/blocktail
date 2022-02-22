@@ -4,10 +4,10 @@
       <mat-expansion-panel expanded="true">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            {{ 'profile.personal_data' | translate }}
+            {{ 'app_pages.profile.personal-data' | translate }}
           </mat-panel-title>
           <mat-panel-description>
-              {{ 'profile.personal_data_text' | translate }}
+              {{ 'app_pages.profile.personal-data-text' | translate }}
             <mat-icon>account_circle</mat-icon>
           </mat-panel-description>        
         </mat-expansion-panel-header>
@@ -23,7 +23,7 @@
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-6 d-flex">
                   <mat-form-field appearance="fill" style="width: 100%;">
-                      <mat-label>username</mat-label>
+                      <mat-label>{{ 'form.general_input.username' | translate }}</mat-label>
                       <input matInput type="text" inputmode="latin-name" value="{{this.user.username}}" maxlength="12" min="1" formControlName="username" required />
                   </mat-form-field>
               </div>
@@ -39,10 +39,10 @@
       <mat-expansion-panel>
           <mat-expansion-panel-header>
             <mat-panel-title>
-              {{ 'profile.security_data' | translate }}
+              {{ 'app_pages.profile.security-data' | translate }}
             </mat-panel-title>
             <mat-panel-description>
-              {{ 'profile.security_data_text' | translate }}
+              {{ 'app_pages.profile.security-data-text' | translate }}
               <mat-icon>security</mat-icon>
             </mat-panel-description>
           </mat-expansion-panel-header>
@@ -57,7 +57,7 @@
               </div>
               <div class="col-12 col-sm-6 col-md-6 col-lg-6 d-flex">
                   <mat-form-field appearance="fill" style="width: 100%;">
-                      <mat-label>Password</mat-label>
+                      <mat-label>{{ 'form.general_input.repeat_password' | translate }}</mat-label>
                       <input matInput type="password" />
                   </mat-form-field>
               </div>
@@ -69,7 +69,7 @@
             Privacy
           </mat-panel-title>
           <mat-panel-description>
-            {{ 'profile.privacy_data_text' | translate}}
+            {{ 'app_pages.profile.privacy-data-text' | translate}}
             <mat-icon>shield</mat-icon>
           </mat-panel-description>
         </mat-expansion-panel-header>

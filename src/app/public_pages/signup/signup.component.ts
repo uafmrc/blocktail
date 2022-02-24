@@ -84,8 +84,8 @@ export class SignupComponent implements OnInit {
           this.loading = false;
         }
       } else {
-        if (this.chkEmail == 'false') {i = 'login.form.error-email-alredy-exist';} else { i = ''}
-        if (this.chkUsr == 'false') {u = 'login.form.error-username-alredy-exist'} else { u = ''}
+        if (this.chkEmail == 'false') {i = 'notify_text.error.form.signup_login.error-email-alredy-exist';} else { i = ''}
+        if (this.chkUsr == 'false') {u = 'notify_text.error.form.signup_login.error-username-alredy-exist'} else { u = ''}
 
         this.messageError = [i,u];
         this.loading = false;
@@ -106,7 +106,7 @@ export class SignupComponent implements OnInit {
     if(this.formRegister.controls['username'].hasError('require')) {
       return '';
     } else {
-      return "login.form.error-username-not-valid";
+      return "notify_text.error.form.signup_login.error-username-not-valid";
     } 
   }
 

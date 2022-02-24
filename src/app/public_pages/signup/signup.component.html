@@ -2,8 +2,8 @@
 <div class="text-center mt-5">
     <main class="form-signin">
         <div class="row">
-            <h2>{{ 'app_pages.login.text-button-signup' | translate }}</h2>
-            <p>{{ 'app_pages.login.text-for-login-redirect' | translate }} <a [routerLink]="['../login']">{{ 'app_pages.login.link_text-for-login-redirect' | translate }}</a></p>
+            <h2>{{ 'app_pages.signup.text-button-signup' | translate }}</h2>
+            <p>{{ 'app_pages.signup.text-for-login-redirect' | translate }} <a [routerLink]="['../login']">{{ 'app_pages.signup.link-text-for-login-redirect' | translate }}</a></p>
         </div>
         <form [formGroup]="formRegister" class="example-form row" style="margin-top: 6px;">
             <p style="color: red;" *ngIf="this.messageError != null">{{ this.messageError[0] | translate}}, {{ this.messageError[1] | translate}}</p>

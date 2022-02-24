@@ -79,7 +79,7 @@
         "home.title": "Sto lavorando!",
         "login.text-button-login": "Accedi",
         "login.text-for-signup-redirect": "Se non hai un account,",
-        "login.link_text-for-signup-redirect": "registrati qui",
+        "login.link-text-for-signup-redirect": "registrati qui",
         "profile.personal-data": "Dati personali",
         "profile.personal-data-text": "Modifica i tuoi dati personali",
         "profile.security-data": "Sicurezza",
@@ -87,7 +87,7 @@
         "profile.privacy-data-text": "Modifica i consensi della privacy",
         "signup.text-button-signup": "Registrati",
         "singup.text-for-login-redirect": "Se hai già un account,",
-        "signup.link_text-for-login-redirect": "accedi qui"
+        "signup.link-text-for-login-redirect": "accedi qui"
     }
 
 

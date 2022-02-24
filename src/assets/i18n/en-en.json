@@ -79,7 +79,7 @@
         "home.title": "Hi works!",
         "login.text-button-login": "Login",
         "login.text-for-signup-redirect": "If you don't have an account,",
-        "login.link_text-for-signup-redirect": "signup here",
+        "login.link-text-for-signup-redirect": "signup here",
         "profile.persona-data": "Personal data",
         "profile.personal-data-text": "Modify your personal data",
         "profile.security-data": "Security",
@@ -87,6 +87,6 @@
         "profile.privacy-data-text": "Manage privacy consents",
         "signup.text-button-signup": "Signup",
         "singup.text-for-login-redirect": "If you already have an account,",
-        "signup.link_text-for-login-redirect": "login here"
+        "signup.link-text-for-login-redirect": "login here"
     }
 }

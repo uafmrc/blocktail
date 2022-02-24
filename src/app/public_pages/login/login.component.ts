@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
   clickLogin() {
     if(this.chkEmail == false) {
       this.loadingForm = false;
-      this.messageError = 'login.form.error-email-not-exist';
+      this.messageError = 'notify_text.error.form.signup_login.error-email-not-exist';
     } else {
       this.loadingForm = true;
       this.http.post<any>(this.url.httpUrl() + "/server/api/user/user-api.php", JSON.stringify({
@@ -53,7 +53,7 @@ export class LoginComponent implements OnInit {
         if(res.activated != '1') {
           localStorage.removeItem('address');
           this.loadingForm = false;
-          this.messageError = 'login.form.error-account-not-activated';
+          this.messageError = 'notify_text.error.form.signup_login.error-account-not-activated';
         } else {
           this.formLogin.reset();
           this.cookie.deleteAll();

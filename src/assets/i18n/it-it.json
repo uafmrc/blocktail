@@ -86,7 +86,7 @@
         "profile.security-data-text": "Gestisci la sicurezza del tuo account",
         "profile.privacy-data-text": "Modifica i consensi della privacy",
         "signup.text-button-signup": "Registrati",
-        "singup.text-for-login-redirect": "Se hai già un account,",
+        "signup.text-for-login-redirect": "Se hai già un account,",
         "signup.link-text-for-login-redirect": "accedi qui"
     }
 

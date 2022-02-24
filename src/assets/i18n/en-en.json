@@ -86,7 +86,7 @@
         "profile.security-data-text": "Manage the security of your account",
         "profile.privacy-data-text": "Manage privacy consents",
         "signup.text-button-signup": "Signup",
-        "singup.text-for-login-redirect": "If you already have an account,",
+        "signup.text-for-login-redirect": "If you already have an account,",
         "signup.link-text-for-login-redirect": "login here"
     }
 }

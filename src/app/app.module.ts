@@ -59,6 +59,7 @@ import { HomeAdminComponent } from './admin/dashboard/home-admin/home-admin.comp
 import { ReadnftAdminComponent } from './admin/dashboard/readnft-admin/readnft-admin.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { PageNotFoundComponent } from './errorPage/404/page-not-found/page-not-found.component';
+import { SentimentService } from './service/sentiment/sentiment.service';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -136,7 +137,7 @@ export function ConnectionFailed(event:any) {
     MatBadgeModule
   ],
   exports:[ProgressSpinnerComponent],
-  providers: [OverlayService,HttpUrlService,AuthService,SplashService],
+  providers: [OverlayService,HttpUrlService,AuthService,SplashService, SentimentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

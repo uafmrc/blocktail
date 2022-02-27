@@ -5,35 +5,35 @@
             <h2>{{ 'app_pages.signup.text-button-signup' | translate }}</h2>
             <p>{{ 'app_pages.signup.text-for-login-redirect' | translate }} <a [routerLink]="['../login']">{{ 'app_pages.signup.link-text-for-login-redirect' | translate }}</a></p>
         </div>
-        <form [formGroup]="formRegister" class="example-form row" style="margin-top: 6px;">
-            <p style="color: red;" *ngIf="this.messageError != null">{{ this.messageError[0] | translate}}, {{ this.messageError[1] | translate}}</p>
-            <mat-form-field class="example-full-width" appearance="fill" (change)="this.checkUsername()">
+        <form [formGroup]="formRegister" class="form-signup row" style="margin-top: 6px;">
+            <p style="color: red;" *ngIf="this.messageError != null">{{ this.messageError[0] | translate}} {{ this.messageError[1] | translate}}</p>
+            <mat-form-field class="full-width-signup" appearance="fill" (change)="this.checkUsername()">
                 <mat-label>{{ "form.general_input.username" | translate }}</mat-label>
-                <input matInput type="text" inputmode="latin-name" formControlName="username" maxlength="12" minlength="3" required />
+                <input matInput type="text" inputmode="latin-name" formControlName="username" autocomplete="username" maxlength="12" minlength="3" required />
                 <mat-error>{{ this.getErrorUsername() | translate }}</mat-error>
             </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill" (change)="this.checkEmail()">
+            <mat-form-field class="full-width-signup" appearance="fill" (change)="this.checkEmail()">
                 <mat-label>Email</mat-label>
-                <input matInput type="email" inputmode="email" formControlName="email" />
+                <input matInput type="email" inputmode="email" formControlName="email" autocomplete="email" required />
                 <mat-error *ngIf="formRegister.controls['email'].invalid"></mat-error>
             </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-form-field class="full-width-signup" appearance="fill">
                 <mat-label>Password</mat-label>
-                <input matInput type="password" formControlName="password" />
+                <input matInput type="password" formControlName="password" autocomplete="new-password" required/>
                 <mat-error *ngIf="formRegister.controls['password'].invalid"></mat-error>
             </mat-form-field>
-            <mat-form-field class="example-full-width" appearance="fill">
+            <mat-form-field class="full-width-signup" appearance="fill">
                 <mat-label>{{ "form.general_input.repeat_password" | translate }}</mat-label>
-                <input matInput type="password" formControlName="passwordtwo" required />
+                <input matInput type="password" formControlName="passwordtwo" autocomplete="off" required />
                 <mat-error *ngIf="formRegister.controls['passwordtwo'].invalid"></mat-error>   
             </mat-form-field>
             <section class="example-section text-start">
-                <mat-checkbox class="example-margin">Indeterminate</mat-checkbox>
+                <mat-checkbox class="margin-signup" [(ngModel)]="checkTerms" [ngModelOptions]="{standalone: true}" required>Indeterminate</mat-checkbox>
             </section>
             <section class="example-section-f text-start mb-4">
-                <mat-checkbox class="example-margin">Checked</mat-checkbox>
+                <mat-checkbox class="margin-signup" [(ngModel)]="checkPrivacy" [ngModelOptions]="{standalone: true}" required>Checked</mat-checkbox>
             </section>
-            <button mat-raised-button type="submit" class="example-full-width-button" color="primary" [class.spinner-loading-button]="this.loading == true" [disabled]="!formRegister.valid || this.loading == true" (click)="clickRegister()">{{ 'app_pages.signup.text-button-signup' | translate }}</button>
+            <button mat-raised-button type="submit" class="full-width-button-signup" color="primary" [class.spinner-loading-button]="this.loading == true" [disabled]="!formRegister.valid || this.loading == true" (click)="clickRegister()">{{ 'app_pages.signup.text-button-signup' | translate }}</button>
         </form>
     </main>
 </div>

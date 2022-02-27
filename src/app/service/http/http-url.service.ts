@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 })
 export class HttpUrlService {
 
-  httpUrlString:string = 'http://localhost:8888';
+  httpUrlString:string = 'https://runtime.madshaker.it';
   constructor() { }
 
   httpUrl():string {

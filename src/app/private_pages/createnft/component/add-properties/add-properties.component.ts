@@ -25,8 +25,8 @@ export class AddPropertiesComponent implements OnInit {
     this.specificQuantity = true;
     this.local_data = data;
     this.action = this.local_data.action;
-    this.actionTitle = 'general_text.' + this.action;
-    this.actionButton = this.action;
+    this.actionTitle = 'general_text.' + this.action.toLowerCase();
+    this.actionButton = this.action.toLowerCase();
   }
 
   doAction(){
@@ -55,7 +55,7 @@ export class AddPropertiesComponent implements OnInit {
 
   changeAdd() {
     if(this.selectedItem == 'number') {
-      this.actionTitle = 'general_text.' + this.action;
+      this.actionTitle = 'general_text.' + this.action.toLowerCase();
       this.action = 'add';
       this.local_data.values = '';
       this.specificQuantity = false;

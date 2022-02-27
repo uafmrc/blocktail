@@ -16,19 +16,23 @@
         "delete": "Delete",
         "date": "Date",
         "file": "File",
+        "button.ok": "Ok",
         "save": "save",
         "update": "Update"
     },
 
     "notify_text": {
+        "error.error_text.message-abuse-text": "It is not possible to continue. The text contains words that are not in line with the data entry safety guidelines.",
         "error.error_text.something-went-wrong": "Somethings went wrong. Try later.",
+        "error.error_text.service-not-found": "At this moment the service seems to be out of order. Please reload the page to use the service again. If that's not enough, try contacting the administration.",
         "error.form.signup_login.error-email-not-exist": "The email entered does not exist",
         "error.form.signup_login.error-email-not-valid": "The email entered is invalid",
-        "error.form.signup_login.error-email-alredy-exist": "The email entered has already been used",
+        "error.form.signup_login.error-email-alredy-exist": "The email entered has already been used.",
         "error.form.signup_login.error-username-not-exist": "The username entered does not exist",
         "error.form.signup_login.error-username-not-valid": "The username entered is invalid",
-        "error.form.signup_login.error-username-alredy-exist": "The username entered has already been used",
+        "error.form.signup_login.error-username-alredy-exist": "The username entered has already been used.",
         "error.form.signup_login.error-account-not-activated": "The account has not yet been activated. Open the email in order to activate the account",
+        "error.form.signup_login.accept-terms-and-privacy": "You must accept the terms and privacy in order to proceed with the registration.",
         "info.loading": "Loading..."
     },
 

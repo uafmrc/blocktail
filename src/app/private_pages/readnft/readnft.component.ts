@@ -84,13 +84,16 @@ export class ReadnftComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      if(result.event == 'Add'){
+      if(result.event == 'add'){
         this.addRowData(result.data);
-      }else if(result.event == 'Update'){
+      }else if(result.event == 'addnoml') {
+        this.addRowDataWithoutML(result.data);
+      }else if(result.event == 'update'){
         this.updateRowData(result.data);
-      }else if(result.event == 'Delete'){
+      }else if(result.event == 'delete'){
         this.deleteRowData(result.data);
       }
+      this.table.renderRows();
     });
   }
 
@@ -99,17 +102,26 @@ export class ReadnftComponent implements OnInit, OnDestroy {
     this.dataSource.push({
       id:d.getTime(),
       name:row_obj.name,
-      values:row_obj.values
+      values:row_obj.values + ' ml'
     });
     this.table.renderRows();
     
+  }
+
+  async addRowDataWithoutML(row_obj:any){
+    var d = new Date();
+    this.dataSource.push({
+      id:d.getTime(),
+      name:row_obj.name,
+      values:row_obj.values
+    });
+    this.table.renderRows();
   }
 
   async updateRowData(row_obj:any){
     this.dataSource = this.dataSource.filter((value,key)=>{
       if(value.id == row_obj.id){
         value.name = row_obj.name;
-        value.values = row_obj.values;
       }
       return true;
     });

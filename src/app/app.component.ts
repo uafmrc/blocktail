@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NavigationEnd, Router } from '@angular/router';
 import { TranslateCompiler } from '@ngx-translate/core';
@@ -13,7 +13,7 @@ import { SplashService } from './service/splash/splash.service';
 })
 export class AppComponent implements OnInit {
   title = 'blocktailchain';
-  language:any;
+  @Output() language:any;
   login:boolean;
   OfflineSite:boolean;
   loading:boolean = false;

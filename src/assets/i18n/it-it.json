@@ -16,19 +16,23 @@
         "delete": "Elimina",
         "date": "Data",
         "file": "File",
+        "button.ok": "Ok",
         "save": "Salva",
         "update": "Aggiorna"
     },
 
     "notify_text": {
+        "error.error_text.message-abuse-text": "Non è possibile continuare. Il testo contiene parole che non sono in linea con le linee guida sulla sicurezza immissione dati.",
         "error.error_text.something-went-wrong": "Qualcosa è andato storto",
+        "error.error_text.service-not-found": "In questo momento il servizio sembra essere fuori uso. Ricarica la pagina per usufruire nuovamente del servizio. Se non dovesse bastare prova a contattare l'amministrazione",
         "error.form.signup_login.error-email-not-exist": "L'email inserita non esiste",
         "error.form.signup_login.error-email-not-valid": "L'email inserita non è valida",
-        "error.form.signup_login.error-email-alredy-exist": "L'email inserita è stata già utilizzata",
+        "error.form.signup_login.error-email-alredy-exist": "L'email inserita è stata già utilizzata.",
         "error.form.signup_login.error-username-not-exist": "L'username inserito non esiste",
         "error.form.signup_login.error-username-not-valid": "L'username inserito non è valida",
-        "error.form.signup_login.error-username-alredy-exist": "L'username inserito è stato già utilizzata",
+        "error.form.signup_login.error-username-alredy-exist": "L'username inserito è stato già utilizzato.",
         "error.form.signup_login.error-account-not-activated": "L'account non è stato ancora attivato. Apri l'email per poter attivare l'account",
+        "error.form.signup_login.accept-terms-and-privacy": "È necessario accettare i termini e la privacy per poter procedere con la registrazione.",
         "info.loading": "Caricamento in corso..."
     },
 

@@ -22,7 +22,6 @@ export class ToolbarComponent implements OnInit {
   constructor(public router:Router,private translateService: TranslateService, private _auth:AuthService, private cookie:CookieService) {
     this.onActivate();
     this.cookieVal = this.cookie.get('blktl_id');
-    
   }
 
   onActivate() {
@@ -35,5 +34,6 @@ export class ToolbarComponent implements OnInit {
 
   public selectLanguage(event:string) {
     this.translateService.use(event);
+    localStorage.setItem('i18', event);
   }
 }
